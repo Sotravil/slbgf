@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) throw 'Tag salah satu lah'
+    if (!who) throw 'Etiqueta a alguien'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
     if (isNaN(txt)) throw 'Hanya angka'
     let poin = parseInt(txt)
@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
     m.reply(`(${-poin} Limit) + (${-pjk} Limit (Pajak 2%)) = ( ${-limit} Limit)`)
     conn.fakeReply(m.chat, `+${poin} Limit`, who, m.text)
 }
-handler.help = ['paylimit @user <amount>']
+handler.help = ['paylimit @user <cantidad,amount>']
 handler.tags = ['xp']
 handler.command = /^paylimit$/
 handler.rowner = false
