@@ -7,14 +7,14 @@ let handler  = async (m, { conn, args }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image|video/.test(mime)) {
       let img = await q.download()
-      if (!img) throw 'Foto/Video tidak ditemukan'
+      if (!img) throw 'Foto / video no encontrado '
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (args[0]) stiker = await sticker(false, args[0], global.packname, global.author)
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Conversion failed'
+    else throw 'La conversión falló '
   }
 }
 handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
