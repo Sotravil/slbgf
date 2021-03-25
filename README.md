@@ -14,9 +14,9 @@
 </p>
 <p align="center">
 <a href="https://github.com/Sotravil/followers"><img title="Seguidores" src="https://img.shields.io/github/followers/Sotravil?color=blue&style=flat-square"></a>
-<a href="https://github.com/Sotravil/slbot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Sotravil/slbot?color=red&style=flat-square"></a>
-<a href="https://github.com/Sotravil/slbot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Sotravil/slbot?color=red&style=flat-square"></a>
-<a href="https://github.com/Sotravil/slbot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Sotravil/slbot?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/Sotravil/slbgf/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Sotravil/slbgf?color=red&style=flat-square"></a>
+<a href="https://github.com/Sotravil/slbgf/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Sotravil/slbgf?color=red&style=flat-square"></a>
+<a href="https://github.com/Sotravil/slbgf/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Sotravil/slbgf?label=Watchers&color=blue&style=flat-square"></a>
 <a href="https://www.codefactor.io/repository/github/Sotravil/slwb"><img src="https://www.codefactor.io/repository/github/mhankbarbar/termux-wabot/badge" alt="CodeFactor" /></a>
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
 </p>
