@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['dl', 'daily', 'claim']
 handler.tags = ['xp']
-handler.command = /^(daily|claim)$/i
+handler.command = /^(dl|daily|claim)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
