@@ -63,7 +63,7 @@ module.exports = {
       if (!m.fromMe && opts['self']) return
       if (typeof m.text !== 'string') m.text = ''
       if (m.isBaileys) return
-      m.exp += Math.ceil(Math.random() * 10)
+      m.exp += Math.ceil(Math.random() * 50)
   
     	let usedPrefix
       let _user = global.DATABASE.data && global.DATABASE.data.users && global.DATABASE.data.users[m.sender]
@@ -167,11 +167,11 @@ module.exports = {
           }
 
           m.isCommand = true
-          let xp = 'exp' in plugin ? parseInt(plugin.exp) : 100 // XP Earning per command 
-          if (xp > 200) m.reply('-_-') // Hehehe
+          let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
+          if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE._data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Sus límites se han terminado, compre mas a través de  *${usedPrefix}buylimit*`, m)
+            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
             continue // Limit habis
           }
           try {
@@ -207,7 +207,7 @@ module.exports = {
             }
           } finally {
             // m.reply(util.format(_user)) 
-            if (m.limit) m.reply(+ m.limit + ' Límite utilizado')
+            if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
           }
     			break
   	  	}
@@ -261,7 +261,7 @@ module.exports = {
         pp = await this.getProfilePicture(user)
       } catch (e) {
       } finally {
-        let text = (chat.sWelcome || this.welcome || conn.welcome || 'Bienvenido, @user!').replace('@user', '@' + user.split('@')[0]).replace('@subject', this.getName(m.key.remoteJid))
+        let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@user', '@' + user.split('@')[0]).replace('@subject', this.getName(m.key.remoteJid))
         this.sendFile(m.key.remoteJid, pp, 'pp.jpg', text, m, false, {
           contextInfo: {
             mentionedJid: [user]
@@ -280,7 +280,7 @@ module.exports = {
         pp = await this.getProfilePicture(user)
       } catch (e) {
       } finally {
-        let text = (chat.sBye || this.bye || conn.bye || 'Adios, @user!').replace('@user', '@' + user.split('@')[0])
+        let text = (chat.sBye || this.bye || conn.bye || 'Bye, @user!').replace('@user', '@' + user.split('@')[0])
         this.sendFile(m.key.remoteJid, pp, 'pp.jpg', text, m, false, {
           contextInfo: {
             mentionedJid: [user]
@@ -294,9 +294,9 @@ module.exports = {
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.reply(m.key.remoteJid, `
-Detectado  @${m.participant.split`@`[0]} ha borrado el mensaje 
+Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
-Para desactivar esta función, escriba 
+Untuk mematikan fitur ini, ketik
 *.enable delete*
 `.trim(), m.message, {
       contextInfo: {
@@ -309,15 +309,15 @@ Para desactivar esta función, escriba
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Este comando solo puede ser utilizado por  _*OWWNER!1!1!*_',
-    owner: 'Este comando solo puede ser utilizado por _*Owner Bot*_!',
-    mods: 'Este comando solo puede ser utilizado por _*Moderator*_ !',
-    premium: 'Este comando es solo para miembros _*Premium*_ !',
-    group: 'Este comando solo se puede usar en grupos !',
-    private: 'Este comando solo se puede usar en chats privados !',
-    admin: 'Este comando es solo para el *Admin* del grupo!',
-    botAdmin: 'Haga a el bot *Admin* para usar este comando!',
-    unreg: 'Regístrese para utilizar esta función escribiendo: \n\n*#nombre.Edad* \n\nEjemplo: *#sotravil.18*'
+    rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
+    owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
+    mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
+    premium: 'Perintah ini hanya untuk member _*Premium*_ !',
+    group: 'Perintah ini hanya dapat digunakan di grup!',
+    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
+    admin: 'Perintah ini hanya untuk *Admin* grup!',
+    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
+    unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
   if (msg) return m.reply(msg)
 }
