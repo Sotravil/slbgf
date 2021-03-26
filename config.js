@@ -12,7 +12,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'I hope you\'re fine'
+global.packname = 'whatsapp bot'
 global.author = 'Sotravil.last'
 
 global.multiplier = 69 // The higher, The harder levelup
