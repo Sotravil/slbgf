@@ -63,7 +63,7 @@ module.exports = {
       if (!m.fromMe && opts['self']) return
       if (typeof m.text !== 'string') m.text = ''
       if (m.isBaileys) return
-      m.exp += Math.ceil(Math.random() * 18)
+      m.exp += Math.ceil(Math.random() * 10)
   
     	let usedPrefix
       let _user = global.DATABASE.data && global.DATABASE.data.users && global.DATABASE.data.users[m.sender]
@@ -167,7 +167,7 @@ module.exports = {
           }
 
           m.isCommand = true
-          let xp = 'exp' in plugin ? parseInt(plugin.exp) : 45 // XP Earning per command 
+          let xp = 'exp' in plugin ? parseInt(plugin.exp) : 100 // XP Earning per command 
           if (xp > 200) m.reply('-_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE._data.users[m.sender].limit < plugin.limit * 1) {
