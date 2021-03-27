@@ -14,7 +14,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
-      month: 'long',
+      month: 'numeric',
       year: 'numeric'
     })
     let time = d.toLocaleTimeString(locale, {
@@ -78,16 +78,16 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ╭─「 ${conn.user.name} 」
-│ Hai, %name!
+│ Hola, %name!
 │
-│ Tersisa *%limit Limit*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
+│ limites: *%limit Limit*
+│ nivel *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
+│ %totalexp Experiencia total
 │ 
-│ Tanggal: *%week %weton, %date*
-│ Waktu: *%time*
+│ Fecha: %date*
+│ Hora: *%time*
 │
-│ Uptime: *%uptime (%muptime)*
+│ tiempo de actividad: *%uptime (%muptime)*
 │ Database: %rtotalreg of %totalreg
 │ Github:
 │ %github
