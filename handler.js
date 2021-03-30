@@ -294,9 +294,9 @@ module.exports = {
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.reply(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+Terdeteksi @${m.participant.split`@`[0]} ha borrado el mensaje 
 
-Untuk mematikan fitur ini, ketik
+Para desactivar esta función, escriba 
 *.enable delete*
 `.trim(), m.message, {
       contextInfo: {
