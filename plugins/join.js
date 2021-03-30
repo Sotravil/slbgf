@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
         json: ["action", "invite", code]
     })
     if (res.status !== 200) throw res
-    m.reply(`Berhasil join grup ${res.gid}`)
+    m.reply(`Se unió con éxito al grupo ${res.gid}`)
 }
 handler.help = ['join <chat.whatsapp.com>']
 handler.tags = ['premium']
