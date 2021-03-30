@@ -63,7 +63,7 @@ module.exports = {
       if (!m.fromMe && opts['self']) return
       if (typeof m.text !== 'string') m.text = ''
       if (m.isBaileys) return
-      m.exp += Math.ceil(Math.random() * 50)
+      m.exp += Math.ceil(Math.random() * 150)
   
     	let usedPrefix
       let _user = global.DATABASE.data && global.DATABASE.data.users && global.DATABASE.data.users[m.sender]
