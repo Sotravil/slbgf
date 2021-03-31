@@ -296,8 +296,7 @@ module.exports = {
     await this.reply(m.key.remoteJid, `
 El participante @${m.participant.split`@`[0]} ha borrado el mensaje 
 
-Para desactivar esta función, escriba 
-*.enable delete*
+
 `.trim(), m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
