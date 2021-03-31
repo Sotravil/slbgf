@@ -8,6 +8,8 @@ handler.before = function (m, { user }) {
 
   if (chat.antiLink && isGroupLink) {
     m.reply('Eliminar!!')
+let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
+  for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
     if (global.opts['restrict']) {
       // if (!user.isAdmin) return true
       // this.groupRemove(m.chat, [m.sender])
