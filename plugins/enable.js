@@ -29,7 +29,7 @@ let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => 
       return m.reply(`
 List option: welcome | delete | public | antilink | autolevelup
 
-Contoh:
+Ejemplo:
 ${usedPrefix}enable welcome
 ${usedPrefix}disable welcome
 `.trim())
