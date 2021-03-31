@@ -5,7 +5,7 @@ let handler = async (m, { conn, args }) => {
 }
 handler.help = ['ban','-'].map(v => 'ban' + v + ' @user')
 handler.tags = ['owner']
-handler.command = /^(ban|b\-)$/i
+handler.command = /^(banear|b\-)$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
