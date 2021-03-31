@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
   for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
 }
 handler.help = ['ban','-'].map(v => 'ban' + v + ' @user')
-handler.tags = ['owner', 'admin']
+handler.tags = ['owner']
 handler.command = /^(banear|b\-)$/i
 handler.owner = true
 handler.mods = false
