@@ -3,9 +3,9 @@ let handler = async (m, { conn, args }) => {
   let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
   for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
 }
-handler.help = ['kick', 'sacar' '-'].map(v => 'ban' + v + ' @user')
+handler.help = ['kick', 'eliminar' '-'].map(v => 'ban' + v + ' @user')
 handler.tags = ['admin']
-handler.command = /^(kick|sacar|\-)$/i
+handler.command = /^(kick|eliminar|\-)$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
