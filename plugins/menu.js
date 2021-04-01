@@ -80,7 +80,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 ╭─「 ${conn.user.name} 」
 │ Hola, %name!
 │
-│ limites: *%limit Limit*
+│ Coins: *%limit coins*
 │ nivel *%level (%exp / %maxexp)* [%xp4levelup para siguiente nivel]
 │ %totalexp Experiencia total
 │ 
