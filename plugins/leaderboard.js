@@ -5,12 +5,12 @@ let handler = async (m, { conn, args }) => {
   let usersLim = sortedLim.map(v => v[0])
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(20, sortedExp.length)
   let text = `
-• *Tabla de clasificación de XP ${len}* •
+• *Tabla de clasificación de Experiencia ${len}* •
 Tu puesto: *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
 
 ${sortedExp.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.exp + ' Exp*').join`\n`}
 
-• *Tabla de clasificación de Limites ${len}* •
+• *Tabla de clasificación de Monedas ${len}* •
 Tu puesto: *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 
 ${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.limit + ' Limit*').join`\n`}
@@ -21,7 +21,7 @@ ${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`
     }
   })
 }
-handler.help = ['leaderboard [jumlah user]', 'lb [jumlah user]']
+handler.help = ['leaderboard [etiquete usuario]', 'lb [etiquete usuario]']
 handler.tags = ['xp']
 handler.command = /^(leaderboard|lb)$/i
 handler.owner = false
