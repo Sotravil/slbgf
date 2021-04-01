@@ -18,7 +18,7 @@ Número: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('inte
 Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
 TOTAL XP: ${exp} (${exp - min} / ${xp}) [${max - exp} xp faltante para subir de nivel]
 Nivel: ${level}
-Limites: ${limit}
+Coins: ${limit}
 Registrado: ${registered ? 'Si (' + new Date(regTime) + ')': 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
 `.trim()
     let mentionedJid = [who]
