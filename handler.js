@@ -194,7 +194,7 @@ module.exports = {
               isBotAdmin,
               isPrems
             })
-            if (!isPrems) m.limit = m.limit || plugin.limit || false
+            if (!isPrems) m.limit = m.limit || plugin.limit || true
           } catch (e) {
             // Error occured
             m.error = e
