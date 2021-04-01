@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   if (!vid) throw 'Video/Audio Extraviado'
   let isVideo = /2$/.test(command)
   let { dl_link, thumb, title, filesize, filesizeF} = await (isVideo ? ytv : yta)(vid.url, 'id4')
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
+  let isLimit = (isPrems || isOwner ? 4 : limit) * 1024 < filesize
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Titulo:* ${title}
 *Tamaño:* ${filesizeF}
