@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let pajak = 0.02
 let handler = async (m, { conn, text }) => {
-    if (!text) throw 'Ingrese el número de límites que se darán'
+    if (!text) throw 'Ingrese el número de coins que se darán'
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
@@ -14,16 +14,16 @@ let handler = async (m, { conn, text }) => {
     limit += pjk
     if (limit < 1) throw 'Minimal 1'
     let users = global.DATABASE._data.users
-    if (limit > users[m.sender].limit) throw 'Límites insuficientes para la transferencia'
+    if (limit > users[m.sender].limit) throw 'coins insuficientes para la transferencia'
     users[m.sender].limit -= limit
     users[who].limit += poin
 
     m.reply(`(${-poin} Limit) + (${-pjk} Limit (Pajak 2%)) = ( ${-limit} Limit)`)
     conn.fakeReply(m.chat, `+${poin} Limit`, who, m.text)
 }
-handler.help = ['paylimit @user <cantidad,amount>']
+handler.help = ['paycoins @user <cantidad>']
 handler.tags = ['xp']
-handler.command = /^paylimit$/
+handler.command = /^paycoins$/
 handler.rowner = false
 
 module.exports = handler
