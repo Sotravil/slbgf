@@ -17,7 +17,7 @@ ya no esta AFK
     let reason = user.afkReason || 'AFK'
     m.reply(`
 No lo etiquetes, esta afk ${reason}
-inactivo hace: ${clockString(new Date - afkTime)}
+tiempo inactivo: ${clockString(new Date - afkTime)}
 `.trim())
   }
   return true
