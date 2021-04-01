@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Titulo:* ${title}
 *Tamaño:* ${filesizeF}
-*Source:* ${vid.url}
+*Fuente:* ${vid.url}
 *${isLimit ? 'Póntelo': ''}Link:* ${dl_link}
 `.trim(), m)
   let _thumb = {}
