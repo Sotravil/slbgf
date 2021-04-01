@@ -27,8 +27,8 @@ module.exports = {
           if (!'autolevelup' in user) user.autolevelup = false
         } else global.DATABASE._data.users[m.sender] = {
           exp: 0,
-          limit: 10,
-          lastclaim: 0,
+          coins: 10,
+          ultimoreclamo: 0,
           registered: false,
           name: this.getName(m.sender),
           age: -1,
@@ -171,7 +171,7 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE._data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
+            this.reply(m.chat, `Sus coins se han terminado, compre mas a través de *${usedPrefix}buy*`, m)
             continue // Limit habis
           }
           try {
@@ -207,7 +207,7 @@ module.exports = {
             }
           } finally {
             // m.reply(util.format(_user)) 
-            if (m.limit) m.reply(+ m.limit + ' Límite utilizado')
+            if (m.limit) m.reply(+ m.limit + ' Coin utilizada')
           }
     			break
   	  	}
