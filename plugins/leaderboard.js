@@ -13,7 +13,7 @@ ${sortedExp.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`
 • *Tabla de clasificación de Monedas ${len}* •
 Tu puesto: *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 
-${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.limit + ' Limit*').join`\n`}
+${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.limit + ' Coins*').join`\n`}
 `.trim()
   conn.reply(m.chat, text, m, {
     contextInfo: {
