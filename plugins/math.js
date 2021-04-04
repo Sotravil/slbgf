@@ -1,7 +1,7 @@
 global.math = global.math ? global.math : {}
 let handler  = async (m, { conn, args, usedPrefix }) => {
   if (args.length < 1) return conn.reply(m.chat, `
-Mode: ${Object.keys(modes).join(' | ')}
+Modo: ${Object.keys(modes).join(' | ')}
 
 Ejemplo de uso: ${usedPrefix}math medium
 `.trim(), m)
