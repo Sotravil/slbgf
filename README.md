@@ -44,6 +44,7 @@ Bot Basico de WhatsApp
 
 ### PARA USUARIOS TERMUX
 ```bash
+> termux-setup-storage 
 > pkg update && pkg upgrade
 > pkg install git -y
 > pkg install nodejs -y
